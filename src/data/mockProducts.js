@@ -1,0 +1,68 @@
+const mockProducts = [
+  {
+    id: 1,
+    title: "Wireless Noise-Cancelling Headphones",
+    price: 2499,
+    category: "Electronics",
+    rating: 4.5,
+    image: null,
+  },
+  {
+    id: 2,
+    title: "Running Shoes - Lightweight Pro",
+    price: 1299,
+    category: "Footwear",
+    rating: 4.2,
+    image: null,
+  },
+  {
+    id: 3,
+    title: "Stainless Steel Water Bottle 1L",
+    price: 399,
+    category: "Kitchen",
+    rating: 4.7,
+    image: null,
+  },
+  {
+    id: 4,
+    title: "Organic Cotton T-Shirt",
+    price: 599,
+    category: "Clothing",
+    rating: 4.0,
+    image: null,
+  },
+  {
+    id: 5,
+    title: "Portable Bluetooth Speaker",
+    price: 1799,
+    category: "Electronics",
+    rating: 4.3,
+    image: null,
+  },
+  {
+    id: 6,
+    title: "Yoga Mat with Carry Strap",
+    price: 849,
+    category: "Sports",
+    rating: 4.6,
+    image: null,
+  },
+  {
+    id: 7,
+    title: "Leather Bi-Fold Wallet",
+    price: 499,
+    category: "Accessories",
+    rating: 3.9,
+    image: null,
+  },
+  {
+    id: 8,
+    title: "Ceramic Coffee Mug 350ml",
+    price: 299,
+    category: "Kitchen",
+    rating: 4.4,
+    image: null,
+  },
+];
+
+export default mockProducts;
