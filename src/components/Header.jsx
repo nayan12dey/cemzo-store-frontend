@@ -1,6 +1,6 @@
 import "./Header.css";
 
-function Header() {
+function Header({ searchQuery, onSearchChange }) {
   return (
     <header className="header">
       <div className="header__inner">
@@ -14,6 +14,8 @@ function Header() {
             className="header__search-input"
             placeholder="Search products..."
             aria-label="Search products"
+            value={searchQuery}
+            onChange={(e) => onSearchChange(e.target.value)}
           />
           <span className="header__search-icon" aria-hidden="true">
             &#128269;

@@ -9,6 +9,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     let cancelled = false; // prevent state update if component unmounts mid-fetch
@@ -41,12 +42,21 @@ function App() {
     return () => { cancelled = true; };
   }, []);
 
+  // Derive filtered list from the original products array — never mutates it
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="app">
-      <Header />
+      <Header searchQuery={searchQuery} onSearchChange={setSearchQuery} />
       <main className="app__main">
         <div className="app__container">
-          <h1 className="app__heading">All Products</h1>
+          <h1 className="app__heading">
+            {searchQuery
+              ? `Results for "${searchQuery}" (${filteredProducts.length})`
+              : "All Products"}
+          </h1>
 
           {loading && (
             <div className="app__status" role="status" aria-live="polite">
@@ -62,7 +72,7 @@ function App() {
             </div>
           )}
 
-          {!loading && !error && <ProductGrid products={products} />}
+          {!loading && !error && <ProductGrid products={filteredProducts} />}
         </div>
       </main>
     </div>
