@@ -16,14 +16,26 @@ function StarRating({ rating }) {
 }
 
 function ProductCard({ product }) {
-  const { title, price, category, rating } = product;
+  const { title, price, category, rating, images } = product;
+
+  // Use the first image from the images array; fall back to a placeholder
+  const imageSrc = Array.isArray(images) && images.length > 0 ? images[0] : null;
 
   return (
     <article className="product-card">
       <div className="product-card__image-wrap">
-        <div className="product-card__image-placeholder" aria-hidden="true">
-          🛍️
-        </div>
+        {imageSrc ? (
+          <img
+            className="product-card__image"
+            src={imageSrc}
+            alt={title}
+            loading="lazy"
+          />
+        ) : (
+          <div className="product-card__image-placeholder" aria-hidden="true">
+            🛍️
+          </div>
+        )}
       </div>
 
       <div className="product-card__body">
@@ -36,7 +48,7 @@ function ProductCard({ product }) {
         </div>
 
         <div className="product-card__footer">
-          <span className="product-card__price">₹{price.toLocaleString("en-IN")}</span>
+          <span className="product-card__price">${price.toFixed(2)}</span>
           <button className="product-card__btn" aria-label={`Add ${title} to cart`}>
             Add to Cart
           </button>
