@@ -72,7 +72,7 @@ function App() {
             </div>
           )}
 
-          {!loading && !error && <ProductGrid products={filteredProducts} />}
+          {!loading && !error && <ProductGrid products={filteredProducts} searchQuery={searchQuery} />}
         </div>
       </main>
     </div>

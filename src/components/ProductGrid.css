@@ -5,11 +5,31 @@
   gap: 1.25rem;
 }
 
-.product-grid__empty {
+.product-grid__empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 5rem 1rem;
   text-align: center;
+}
+
+.product-grid__empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.product-grid__empty-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.product-grid__empty-subtitle {
+  font-size: 0.9375rem;
   color: #6b7280;
-  padding: 3rem 0;
-  font-size: 1rem;
+  max-width: 320px;
 }
 
 /* Tablet: 2 columns */
